@@ -16,4 +16,6 @@ Ticket ticket = new Ticket
   peopleInvolved = new List<string> { "Drew Kjell", "John Doe", "Bill Jones" }
 };
 
+Console.WriteLine(ticket.Display());
+
 logger.Info("Program ended");
