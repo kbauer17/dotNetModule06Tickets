@@ -5,17 +5,9 @@ string path = Directory.GetCurrentDirectory() + "\\nlog.config";
 
 // create instance of Logger
 var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
+string ticketFilePath = Directory.GetCurrentDirectory() + "\\tickets.csv";
 logger.Info("Program started");
 
-Ticket ticket = new Ticket
-{
-  ticketId = 1,
-  summary = "This is a bug ticket",
-  status = "Open",
-  priority = "High",
-  peopleInvolved = new List<string> { "Drew Kjell", "John Doe", "Bill Jones" }
-};
-
-Console.WriteLine(ticket.Display());
+TicketFile ticketFile = new TicketFile(ticketFilePath);
 
 logger.Info("Program ended");
