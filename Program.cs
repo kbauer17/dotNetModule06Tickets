@@ -24,6 +24,18 @@ do
   // input selection
   choice = Console.ReadLine();
   logger.Info("User choice: {Choice}", choice);
+  
+  if (choice == "1")
+  {
+    // Add ticket
+  } else if (choice == "2")
+  {
+    // Display All Tickets
+    foreach(Ticket t in ticketFile.Tickets)
+    {
+      Console.WriteLine(t.Display());
+    }
+  }
 
 } while (choice == "1" || choice == "2");
 
