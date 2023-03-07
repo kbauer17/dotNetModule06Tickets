@@ -5,7 +5,10 @@ string path = Directory.GetCurrentDirectory() + "\\nlog.config";
 
 // create instance of Logger
 var logger = LogManager.LoadConfiguration(path).GetCurrentClassLogger();
-string ticketFilePath = Directory.GetCurrentDirectory() + "\\tickets.csv";
+
+// designate the file to read/write to
+string ticketFilePath = Directory.GetCurrentDirectory() + "//tickets.csv";
+
 logger.Info("Program started");
 
 TicketFile ticketFile = new TicketFile(ticketFilePath);
@@ -17,9 +20,11 @@ do
   Console.WriteLine("1) Add Ticket");
   Console.WriteLine("2) Display All Tickets");
   Console.WriteLine("Enter to quit");
+
   // input selection
   choice = Console.ReadLine();
   logger.Info("User choice: {Choice}", choice);
+
 } while (choice == "1" || choice == "2");
 
 
